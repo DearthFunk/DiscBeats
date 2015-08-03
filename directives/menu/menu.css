@@ -1,0 +1,96 @@
+div.menuContainer {
+    color: #FFFFFF;
+    position: absolute;
+    right: -1px;
+    padding: 0 10px 10px 10px;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+    background: #4c4c4c; /* Old browsers */
+    background: #7b8189; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7b8189 19%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(19%,#7b8189), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7b8189 19%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7b8189 19%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7b8189 19%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7b8189 19%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7b8189', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+    div.menuContainer canvas {
+        cursor: pointer;
+    }
+    div.menuContainer > div.helpPanel {
+        padding: 10px 0;
+    }
+
+    div.menuContainer span.title {
+        font-size: 16px;
+        width: 100%;
+        display: table;
+        vertical-align: top;
+    }
+
+    div.menuContainer > div.button {
+        text-align: center;
+        padding: 6px 0;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+    }
+        div.menuContainer > div.button:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+
+
+    div.menuContainer > .border {
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+    div.menuContainer > table.sliders {
+            width: 100%;
+        }
+        div.menuContainer > table.sliders tr {
+
+        }
+            div.menuContainer > table.sliders tr td.label{
+                width: 22px;
+                max-width: 22px;
+                font-size: 16px;
+                text-align: right;
+                padding-right: 5px;
+            }
+
+    div.menuContainer > div.selector {
+        text-align: center;
+        padding: 10px 0;
+    }
+        div.menuContainer > div.selector > div.button {
+            width: 26px;
+            display: inline-block;
+            height: 26px;
+            margin: 0 2px;
+            border: 1px solid #999999;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 2px;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+            div.menuContainer > div.selector > div.button > div.inner:hover {
+                background-color: rgba(255,255,255,0.3);
+            }
+            div.menuContainer > div.selector > div.button > div.inner.true {
+                background-color: rgba(255,255,255,1);
+            }
+            div.menuContainer > div.selector > div.button > div.inner {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #FFFFFF;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+

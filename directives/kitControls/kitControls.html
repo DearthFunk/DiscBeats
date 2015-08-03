@@ -1,0 +1,26 @@
+<div class="kitControlsContainer verticalScrollBarLight">
+
+    <div class="section {{!audioService.fx.tremolo.bypass}}">
+        <span class="title" data-ng-click="audioService.fx.tremolo.bypass = !audioService.fx.tremolo.bypass">Tremolo</span>
+        <div class="knob" data-label="'Int'" data-size="55" data-knob-value="audioService.fx.tremolo.intensity"></div>
+        <div class="knob" data-label="'Rat'" data-size="55" data-min-value="0.1" data-max-value="11" data-knob-value="audioService.fx.tremolo.rate"></div>
+        <div class="knob" data-label="'Phs'" data-size="55" data-min-value="0" data-max-value="180" data-knob-value="audioService.fx.tremolo.stereoPhase"></div>
+    </div>
+
+    <div class="section {{!audioService.fx.delay.bypass}}">
+        <span class="title" data-ng-click="audioService.fx.delay.bypass = !audioService.fx.delay.bypass">Delay</span>
+        <div class="knob" data-label="'Wet'" data-size="55" data-knob-value="audioService.fx.delay.wetLevel.value"></div>
+        <div class="knob" data-label="'Dry'" data-size="55" data-knob-value="audioService.fx.delay.dryLevel.value"></div>
+        <div class="knob" data-label="'Fbk'" data-size="55" data-knob-value="audioService.fx.delay.feedback.value"></div>
+        <div class="knob" data-label="'Dly'" data-min-value="0" data-max-value="300" data-size="55" data-knob-value="audioService.fx.delay.delayTime.value"></div>
+        <div class="knob" data-label="'Cut'" data-min-value="20" data-max-value="22050" data-size="55" data-knob-value="audioService.fx.delay.cutoff.value"></div>
+    </div>
+
+    <div class="section noBottomBorder {{!audioService.fx.bitcrusher.bypass}}">
+        <span class="title" data-ng-click="audioService.fx.bitcrusher.bypass = !audioService.fx.bitcrusher.bypass">Bit Crusher</span>
+        <div class="knob" data-label="'Bit'" data-min-value="1" data-max-value="16" data-size="55" data-knob-value="audioService.fx.bitcrusher.bits"></div>
+        <div class="knob" data-label="'Siz'" data-min-value="256" data-max-value="16384" data-size="55" data-knob-value="audioService.fx.bitcrusher.bufferSize"></div>
+        <div class="knob" data-label="'Frq'" data-min-value="0.0001" data-max-value="1" data-size="55" data-knob-value="audioService.fx.bitcrusher.normFreq"></div>
+    </div>
+
+</div>

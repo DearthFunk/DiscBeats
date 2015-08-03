@@ -1,0 +1,52 @@
+div.importExportWindowContainer {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+}
+
+div.importExportWindowContainer > div.inner {
+    position: absolute;
+    border: 1px solid white;
+    background-color: #000000;
+    color: #FFFFFF;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    height: 400px;
+    margin-top: -200px;
+    width: 600px;
+    margin-left: -300px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+    padding: 15px;
+    text-align: center;
+}
+div.importExportWindowContainer > div.inner > i {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    font-size: 14px;
+}
+div.importExportWindowContainer > div.inner > textarea {
+    width: 560px;
+    height: 270px;
+    max-width: 560px;
+    max-height: 270px;
+    margin-bottom: 5PX;
+}
+div.importExportWindowContainer > div.inner > div.button {
+    display: inline-block;
+    font-size: 20px;
+    margin: 23px auto;
+    cursor: pointer;
+    padding: 1px 36px;
+    text-align: left;
+}
+
+div.importExportWindowContainer > div.inner > div.button:hover,
+div.importExportWindowContainer > div.inner > div.button.zeroclipboard-is-hover {
+    background-color: rgba(100,100,100,0.5);
+}

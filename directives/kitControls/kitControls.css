@@ -1,0 +1,37 @@
+div.kitControlsContainer {
+    height: calc(100% - 327px);
+    overflow-y: auto;
+}
+    div.kitControlsContainer > div.kitSelector {
+        height: 25px;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 8px 0;
+        text-align: center;
+    }
+    div.kitControlsContainer > div.section.true {
+        background-color: rgba(255,255,255,0.2);
+    }
+    div.kitControlsContainer > div.section:last-child {
+        border-bottom: none;
+    }
+    div.kitControlsContainer > div.section {
+        font-size: 20px;
+        border-bottom: 1px solid #FFFFFF;
+        text-align: center;
+        padding: 10px 0;
+    
+    }
+        div.kitControlsContainer > div.section > span.title {
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+    div.kitControlsContainer > div.section > div.left {
+        display: inline-block;
+    }
+
+    div.kitControlsContainer > div.section > div.right {
+        display: inline-block;
+        vertical-align: top;
+    }

@@ -1,0 +1,27 @@
+<div class="menuContainer" data-ng-style="{width: menuSize + 'px'}" id="menuContainer">
+    <div class="button border" data-ng-click="helpWindow()">HELP / INFO</div>
+    <div class="button border" data-ng-click="importExportWindow()">IMPORT / EXPORT</div>
+    <div class="button border" data-ng-click="randomize()">RANDOMIZE</div>
+    <div class="button border" data-ng-click="clearDisc()">CLEAR DISC</div>
+    <table class="sliders border">
+        <tr><td class="label">{{editingVol ? audioService.node.masterGain.gain.value.toFixed(1) : 'VOL'}}</td>
+            <td><div class="sliderHorizontal" data-currently-moving="editingVol" data-slider-value="audioService.node.masterGain.gain.value"></div></td>
+        </tr>
+        <tr><td class="label">{{editingSpd ? audioService.spd.toFixed(1) : 'SPD'}}</td>
+            <td><div class="sliderHorizontal" data-currently-moving="editingSpd" data-slider-value="audioService.spd"></div></td>
+        </tr>
+        <tr><td class="label">{{editingLen ? audioService.discLength : 'LEN'}}</td>
+            <td><div class="sliderHorizontal" data-currently-moving="editingLen" data-slider-value="audioService.len" data-call-back="updateLen"></div></td>
+        </tr>
+    </table>
+
+    <div class="selector border">
+        <span class="title">KITS</span>
+        <div class="button" data-ng-click="changeKit($index)" data-ng-right-click="resetKit($index)" data-ng-repeat="item in audioService.kitTemplates track by $index">
+            <div class="inner {{$index == audioService.kitIndex}}">{{$index == resetIndex ? 'X' : ''}}</div>
+        </div>
+    </div>
+
+    <div class="animation kitControls" data-ng-hide="showHelpScreen"></div>
+
+</div>
