@@ -1,5 +1,5 @@
 # DiscBeats
-Live Demo: <a href="http://discbeats.dearthfunk.com/">http://discbeats.dearthfunk.com/</a><br><br>
+Live Demo: <a href="http://dearthfunk.github.io/DiscBeats/">http://dearthfunk.github.io/DiscBeats/</a><br><br>
 
 Simply put, it is a disc with multiple layers. Each layer is track with a different audio sample. Click a slice of the disc to activate the cell. Basically its a drum tracker, but in the shape of a disc. <br><br>
 
