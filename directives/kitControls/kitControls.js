@@ -3,7 +3,7 @@ angular.module('kitControlsModule', [])
     .directive('kitControls', function (audioService) {
         return {
             restrict:'C',
-            templateUrl:'directives/kitControls/kitControls.html',
+            templateUrl:'CACHE/directives/kitControls/kitControls.html',
             replace: true,
             link: function(scope) {
 

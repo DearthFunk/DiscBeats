@@ -8,7 +8,7 @@ angular.module('sliderHorizontalElement', [])
                 sliderValue: "=sliderValue",
 	            callBack: "=callBack"
             },
-            templateUrl:'elements/sliderHorizontal/sliderHorizontal.html',
+            templateUrl:'CACHE/elements/sliderHorizontal/sliderHorizontal.html',
             replace: true,
             link: function(scope,element) {
 

@@ -3,14 +3,9 @@ angular.module('importExportWindowModule', [])
     .directive('importExportWindow', function ($rootScope,audioService) {
         return {
             restrict:'C',
-            templateUrl:'directives/importExportWindow/importExportWindow.html',
+            templateUrl:'CACHE/directives/importExportWindow/importExportWindow.html',
             replace: true,
             link: function(scope)	{
-
-
-
-	            var client = new ZeroClipboard( document.getElementById("copyButton") );
-
 
 	            scope.textAreaData = '';
 

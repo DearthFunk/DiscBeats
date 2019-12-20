@@ -3,7 +3,7 @@ angular.module('menuModule', [])
     .directive('menu', function ($timeout,$rootScope,audioService,dataService) {
         return {
             restrict:'C',
-            templateUrl:'directives/menu/menu.html',
+            templateUrl:'CACHE/directives/menu/menu.html',
             replace: true,
             link: function(scope)	{
 
