@@ -5,12 +5,10 @@ let templateCache = require('gulp-angular-templatecache');
 let concatCss = require('gulp-concat-css');
 let path = require('path');
 
-const interval_time = 500;
-
 let fp = {
     resources: [
       'favicon.gif',
-      'favicon.icon',
+      'favicon.ico',
       'background.png'
     ],
     lib: [
@@ -39,13 +37,13 @@ let fp = {
 
 //////////////////////////////////////////////////////////////////////////////
 
-gulp.task('main_js', function(){
+function main_js(){
     return gulp
         .src(fp.main_js)
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist'));
-});
-gulp.task('main_templates', function(){
+}
+function main_templates(){
     return gulp
         .src(fp.main_templates, {base: path.join(__dirname, './')})
         .pipe(templateCache('partials.js',{
@@ -53,48 +51,52 @@ gulp.task('main_templates', function(){
             root: 'CACHE/'
         }))
         .pipe(gulp.dest('dist'));
-});
-gulp.task('main_styles', function(){
+}
+function main_styles(){
     return gulp
         .src(fp.main_styles)
         .pipe(concatCss('app.css'))
         .pipe(gulp.dest('dist'));
-});
-gulp.task('main', gulp.series('main_js', 'main_templates', 'main_styles'));
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 
-gulp.task('clear', function(){
+function clean(){
     return del('./dist/**/*');
-});
-
-gulp.task('samples', function(){
+}
+function samples(){
     return gulp
         .src(fp.samples)
-        .pipe(gulp.dest('dist/samples'));
-});
-
-gulp.task('libs', function(){
+        .pipe(gulp.dest('./dist/samples'));
+}
+function libs(){
     return gulp
         .src(fp.lib)
         .pipe(concat('lib.js'))
         .pipe(gulp.dest('./dist'));
-});
-
-///////////////////////////////////////////////////////////////
-gulp.task('build', gulp.parallel(
-    'main',
-    'samples',
-    'libs'
-));
-
-gulp.task('default', gulp.series('clear', 'build'));
-
-gulp.task('watch', gulp.series('default'), function(){
-    console.log('WATCHING!!!!!!');
-    gulp.watch(fp.main_js, {interval: interval_time}, gulp.parallel('main_js'));
-    gulp.watch(fp.main_templates, {interval: interval_time}, gulp.parallel('main_templates'));
-    gulp.watch(fp.main_styles, {interval: interval_time}, gulp.parallel('main_styles'));
-});
+}
+function resources(){
+    return gulp
+        .src(fp.resources)
+        .pipe(gulp.dest('./dist'));
+}
+function watch_all(){
+    gulp.watch(fp.main_js, gulp.parallel('main_js'));
+    gulp.watch(fp.main_templates, gulp.parallel('main_templates'));
+    gulp.watch(fp.main_styles, gulp.parallel('main_styles'));
+}
 
 //////////////////////////////////////////////////////////////////////////////
+
+const main = gulp.series(main_js, main_templates, main_styles);
+const build = gulp.series(clean, samples, libs, resources, main);
+
+exports.main_js = main_js;
+exports.main_styles = main_styles;
+exports.main_templates = main_templates;
+
+exports.clean = clean;
+exports.main = main;
+exports.build = build;
+exports.default = build;
+exports.watch = gulp.series(main, watch_all);

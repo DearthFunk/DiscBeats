@@ -13,7 +13,7 @@ body {
     font-size: 12px;
     background-color: #FFFFFF;
     background-size: 100% 100%;
-    background-image: url('../background.png');
+    background-image: url('background.png');
 }
 canvas.disc         { z-index: 1; }
 canvas.visualizer   { z-index: 0; }

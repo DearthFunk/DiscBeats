@@ -15,6 +15,7 @@ angular.module('importExportWindowModule', [])
 
 	            scope.preventProp = function(e) {
 		            e.stopPropagation();
+					scope.importExportWindowVisible = !scope.importExportWindowVisible;
 	            };
 
 	            scope.importData = function() {
