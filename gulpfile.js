@@ -99,4 +99,4 @@ exports.clean = clean;
 exports.main = main;
 exports.build = build;
 exports.default = build;
-exports.watch = gulp.series(main, watch_all);
+exports.watch = gulp.series(build, watch_all);
