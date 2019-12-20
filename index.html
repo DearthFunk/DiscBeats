@@ -20,13 +20,21 @@
 </head>
 
 <body data-ng-controller="discController">
-
+    <div class="clickToContinue"
+        data-ng-show="showInitAudiocontextMessage"
+        data-ng-click="initAudioContext($event)">
+        <span>Click to Continue.<br>
+        <i>AKA: Init AudioContext<Br>
+        with a gesture</i> :)</span>
+        <div class="wave"></div>
+    </div>
+    <span data-ng-if="!showInitAudiocontextMessage">
     <canvas class="fullScreen disc"></canvas>
     <canvas class="fullScreen visualizer"></canvas>
 
     <div class="menu"></div>
     <div class="importExportWindow" data-ng-show="importExportWindowVisible"></div>
     <div class="helpWindow" data-ng-show="helpWindowVisible"></div>
-
+    </span>
 </body>
 </html>
