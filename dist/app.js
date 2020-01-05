@@ -953,9 +953,15 @@ angular.module('discModule', [])
 	            $rootScope.$on('mouseDownEvent',function(e,args){
 		            if (distanceFromCenter < centerButtonSize) {
 			            audioService.playing = !audioService.playing;
-			            audioService.playing ?
-				            audioService.node.stopper.connect(audioService.fx.tremolo.input) :
-				            audioService.node.stopper.disconnect();
+
+			            if (audioService.playing){
+				            audioService.node.masterGain.connect(audioService.node.analyser);
+				            audioService.node.masterGain.connect(audioService.audioCtx.destination);
+			            }
+			            else{
+				            audioService.node.masterGain.disconnect();
+			            }
+
 			            drawDisc();
 		            }
 		            else if (distanceFromCenter < rad && distanceFromCenter > centerSize) {
@@ -1192,7 +1198,7 @@ angular.module('knobElement', [])
     });
 angular.module('sliderHorizontalElement', [])
 
-    .directive('sliderHorizontal', function() {
+    .directive('sliderHorizontal', ['$timeout', function($timeout) {
         return {
             restrict:'C',
             scope: {
@@ -1205,7 +1211,11 @@ angular.module('sliderHorizontalElement', [])
             link: function(scope,element) {
 
 	            scope.thumbWidth = 8;
-                scope.width = element[0].getBoundingClientRect().width;
+	            scope.width = 0;
+
+	            $timeout(function(){
+		            scope.width = element[0].getBoundingClientRect().width;
+	            });
 
 
                 var sliding, startX, originalX, newValue;
@@ -1263,4 +1273,4 @@ angular.module('sliderHorizontalElement', [])
 
             }
         }
-    });
+    }]);

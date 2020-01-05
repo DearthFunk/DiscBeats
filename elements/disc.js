@@ -157,9 +157,15 @@ angular.module('discModule', [])
 	            $rootScope.$on('mouseDownEvent',function(e,args){
 		            if (distanceFromCenter < centerButtonSize) {
 			            audioService.playing = !audioService.playing;
-			            audioService.playing ?
-				            audioService.node.stopper.connect(audioService.fx.tremolo.input) :
-				            audioService.node.stopper.disconnect();
+
+			            if (audioService.playing){
+				            audioService.node.masterGain.connect(audioService.node.analyser);
+				            audioService.node.masterGain.connect(audioService.audioCtx.destination);
+			            }
+			            else{
+				            audioService.node.masterGain.disconnect();
+			            }
+
 			            drawDisc();
 		            }
 		            else if (distanceFromCenter < rad && distanceFromCenter > centerSize) {
