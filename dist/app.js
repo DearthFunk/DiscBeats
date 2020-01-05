@@ -298,12 +298,12 @@ angular.module('audioServiceModule', [])
 			audioService.kitTemplates = angular.isObject(dataService.storage) ?
 				dataService.storage.kitTemplates :
 				[
-					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:true,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.10000000149011612,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:100}},
-					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.10000000149011612,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:30}},
-					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.718999981880188,dryLevel:1,feedback:0.593999981880188,delayTime:121.9749984741211,cutoff:20000},tremolo:{bypass:true,intensity:0.831,rate:0.594,stereoPhase:0}},
-					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:true,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.10000000149011612,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:180}},
-					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:1,dryLevel:0,feedback:0.6940000057220459,delayTime:16.975000381469727,cutoff:3752.875},tremolo:{bypass:true,intensity:0.875,rate:1,stereoPhase:0}},
-					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.10000000149011612,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:0}}
+					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:true,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.1,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:100}},
+					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.1,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:30}},
+					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.718999981880188,dryLevel:1,feedback:0.593999981880188,delayTime:0.5,cutoff:20000},tremolo:{bypass:true,intensity:0.831,rate:0.594,stereoPhase:0}},
+					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:true,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.1,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:180}},
+					{bitcrusher:{bypass:true,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:1,dryLevel:0,feedback:0.6940000057220459,delayTime:0.8,cutoff:3752.875},tremolo:{bypass:true,intensity:0.875,rate:1,stereoPhase:0}},
+					{bitcrusher:{bypass:false,bits:4,bufferSize:4096,normFreq:0},delay:{bypass:false,wetLevel:0.5,dryLevel:1,feedback:0.44999998807907104,delayTime:0.1,cutoff:20000},tremolo:{bypass:true,intensity:0.3,rate:5,stereoPhase:0}}
 				];
 			audioService.kitIndex =       angular.isObject(dataService.storage) ? dataService.storage.kitIndex : 0;
 			audioService.spd =            angular.isObject(dataService.storage) ? dataService.storage.spd : 0.5;
